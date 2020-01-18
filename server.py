@@ -18,7 +18,6 @@ import server.user_functions as user
 from server.Error import AccessError, ValueError
 from server.helpers import to_bool, to_float, to_int
 
-
 def defaultHandler(err):
     response = err.get_response()
     response.data = dumps({
@@ -344,8 +343,6 @@ def message_unpin():
         message.message_unpin(token, message_id)
     )
 
-
-
 '''
 USER 
 '''
@@ -508,7 +505,6 @@ def get_image(path):
     '''
   
     return send_from_directory('', path)
-
 
 if __name__ == '__main__':
     APP.run(port=(sys.argv[1] if len(sys.argv) > 1 else 5001), debug=True)
